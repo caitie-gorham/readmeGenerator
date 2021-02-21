@@ -29,7 +29,7 @@ const promptsText = () => {
         },
         {
             type: 'list',
-            choices: ["a", "b", "c"],
+            choices: ["APACHE 2.0", "MIT", "GNU v3"],
             message: 'Project License ',
             name: 'license',
         },
@@ -74,8 +74,34 @@ const readmeGen = ({
     gitUser,
     email
 }) => {
+    // badges from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+    let  badgeIcon = "";
+    if (license === "APACHE 2.0") {
+        badgeIcon = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+    };
+    if (license === "MIT") {
+        badgeIcon = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+    };
+    if (license === "GNU v3") {
+        badgeIcon = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
+    };
+    
+    // insert link to more resources for license chosen
+    let licenseText = "";
+    if (license === "APACHE 2.0") {
+        licenseText = "Apache 2.0: https://choosealicense.com/licenses/apache-2.0/"
+    };
+    if (license === "MIT") {
+        licenseText = "MIT: https://choosealicense.com/licenses/mit/"
+    };
+    if (license === "GNU v3") {
+        licenseText = "GNU v3: https://choosealicense.com/licenses/gpl-3.0/"
+    };
+
+// format the README with markdown
     return `
-# Project Name: ${projectTitle}
+# ${projectTitle}
+${badgeIcon}
 # Table of Contents
 * [Description ](#Description)
 * [Installation](#Installation)
@@ -91,7 +117,7 @@ const readmeGen = ({
 # Usage
 ### ${userInstructions}
 # License
-### ${license}
+### ${licenseText}
 # Contributing
 ### ${userContributions}
 # Tests
