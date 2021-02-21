@@ -14,6 +14,9 @@
 
 This is a command-line node.js application that generates a README based off a template and user inputs. It utilizes the inquirer package.
 
+<!-- markdown screenshot of rendered image -->
+![Alt text](./images/ExampleREADME.png?raw=true "Example Readme")
+
 # Installation
 
 npm install
