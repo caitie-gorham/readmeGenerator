@@ -17,9 +17,7 @@ This is a command-line node.js application that generates a README based off a t
 <!-- markdown screenshot of rendered image -->
 ![Alt text](./images/ExampleREADME.png?raw=true "Example Readme")
 
-<video width="320" height="240" controls>
-  <source src="./images/ExampleRecording.mov" type="video/mp4">
-</video>
+![Alt Text](./images/ExampleRecording.gif)
 
 # Installation
 
