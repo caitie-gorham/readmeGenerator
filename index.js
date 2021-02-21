@@ -125,7 +125,7 @@ ${badgeIcon}
 # Questions
 ### Project Created By: ${authorName}
 ### GitHub User Name: ${gitUser}
-### EmaiL: ${email}`
+### Email: ${email}`
 }
 
 
